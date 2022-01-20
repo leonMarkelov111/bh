@@ -26,12 +26,12 @@ function imgui.OnDrawFrame()
         imgui.SetNextWindowSize(imgui.ImVec2(400, 155), imgui.Cond.FirstUseEver)
         imgui.Begin(u8'Promo', window, 1 + 2 + 32 + 128)
         local size = imgui.GetWindowSize()
-        imgui.SetCursorPos(imgui.ImVec2(size.x / 2 - imgui.CalcTextSize(u8'—Ú‡ÚÛÒ: '..(state and u8'¬ÍÎ˛˜∏Ì' or u8'¬˚ÍÎ˛˜ÂÌ')).x / 2, 12.5)) 
-        imgui.Text(u8'—Ú‡ÚÛÒ:') imgui.SameLine()
+        imgui.SetCursorPos(imgui.ImVec2(size.x / 2 - imgui.CalcTextSize(u8'–°—Ç–∞—Ç—É—Å: '..(state and u8'–í–∫–ª—é—á—ë–Ω' or u8'–í—ã–∫–ª—é—á–µ–Ω')).x / 2, 12.5)) 
+        imgui.Text(u8'–°—Ç–∞—Ç—É—Å:') imgui.SameLine()
         if state then
-            imgui.TextColored(imgui.ImVec4(0, 1, 0, 1), u8'¬ÍÎ˛˜∏Ì')
+            imgui.TextColored(imgui.ImVec4(0, 1, 0, 1), u8'–í–∫–ª—é—á—ë–Ω')
         else
-            imgui.TextColored(imgui.ImVec4(1, 0, 0, 1), u8'¬˚ÍÎ˛˜ÂÌ')
+            imgui.TextColored(imgui.ImVec4(1, 0, 0, 1), u8'–í—ã–∫–ª—é—á–µ–Ω')
         end
         imgui.SameLine()
         imgui.SetCursorPos(imgui.ImVec2(size.x - 20 - 10, 10))
@@ -39,11 +39,11 @@ function imgui.OnDrawFrame()
         if imgui.Button(fa.ICON_FA_TIMES, imgui.ImVec2(20, 20)) then window.v = false end
         imgui.PopStyleVar(1)
         imgui.Separator()
-        imgui.SetCursorPosX(size.x / 2 -  imgui.CalcTextSize(state and u8'¬˚ÍÎ˛˜ËÚ¸' or u8'¬ÍÎ˛˜ËÚ¸').x / 2)
-        if imgui.Button(state and u8'¬˚ÍÎ˛˜ËÚ¸' or u8'¬ÍÎ˛˜ËÚ¸') then state = not state end
-        imgui.SetCursorPosX(size.x / 2 - (imgui.CalcTextSize(u8'«‡‰ÂÊÍ‡').x + 210) / 2) imgui.Text(u8'«‡‰ÂÊÍ‡:') imgui.SameLine() imgui.PushItemWidth(150) imgui.SliderInt('##waiting', waiting, 0, 5000, waiting.v ~= 0 and "%.0f ms" or u8"¡ÂÁ Á‡‰ÂÊÍË") imgui.SameLine() if imgui.Button(fa.ICON_FA_MINUS, imgui.ImVec2(25, 20)) then if waiting.v - 100 > 0 then waiting.v = waiting.v - 100 else waiting.v = 0 end end imgui.SameLine() if imgui.Button(fa.ICON_FA_PLUS, imgui.ImVec2(25, 20)) then if waiting.v + 100 < 5000 then waiting.v = waiting.v + 100 else waiting.v = 5000 end end
+        imgui.SetCursorPosX(size.x / 2 -  imgui.CalcTextSize(state and u8'–í—ã–∫–ª—é—á–∏—Ç—å' or u8'–í–∫–ª—é—á–∏—Ç—å').x / 2)
+        if imgui.Button(state and u8'–í—ã–∫–ª—é—á–∏—Ç—å' or u8'–í–∫–ª—é—á–∏—Ç—å') then state = not state end
+        imgui.SetCursorPosX(size.x / 2 - (imgui.CalcTextSize(u8'–ó–∞–¥–µ—Ä–∂–∫–∞').x + 210) / 2) imgui.Text(u8'–ó–∞–¥–µ—Ä–∂–∫–∞:') imgui.SameLine() imgui.PushItemWidth(150) imgui.SliderInt('##waiting', waiting, 0, 5000, waiting.v ~= 0 and "%.0f ms" or u8"–ë–µ–∑ –∑–∞–¥–µ—Ä–∂–∫–∏") imgui.SameLine() if imgui.Button(fa.ICON_FA_MINUS, imgui.ImVec2(25, 20)) then if waiting.v - 100 > 0 then waiting.v = waiting.v - 100 else waiting.v = 0 end end imgui.SameLine() if imgui.Button(fa.ICON_FA_PLUS, imgui.ImVec2(25, 20)) then if waiting.v + 100 < 5000 then waiting.v = waiting.v + 100 else waiting.v = 5000 end end
         imgui.SetCursorPosY(size.y - 25) imgui.Separator()
-        imgui.SetCursorPosX(size.x / 2 - imgui.CalcTextSize(u8'¿‚ÚÓ: Katsu <3').x / 2) imgui.Text(u8'¿‚ÚÓ:') imgui.SameLine() imgui.TextColored(imgui.ImVec4(1, 0, 77 / 255, 1), '#Yankee')
+        imgui.SetCursorPosX(size.x / 2 - imgui.CalcTextSize(u8'–ê–≤—Ç–æ—Ä: Katsu <3').x / 2) imgui.Text(u8'–ê–≤—Ç–æ—Ä:') imgui.SameLine() imgui.TextColored(imgui.ImVec4(1, 0, 77 / 255, 1), '#Yankee')
         imgui.End()
     end
 end
@@ -58,22 +58,22 @@ function q.onSendCommand(text)
 end
 
 function q.onServerMessage(color, text)
-    if text:find('{BE2D2D} (.*) (.*) ÍÛÔËÎ ‰ÓÏ ID:(.*) ÔÓ „ÓÒ. ˆÂÌÂ Á‡ (.*) ms!  ‡Ô˜‡: ((.*) | (.*))') then
-        local nick text:match('{BE2D2D} (.*) .* ÍÛÔËÎ ‰ÓÏ ID:.* ÔÓ „ÓÒ. ˆÂÌÂ Á‡ .* ms!  ‡Ô˜‡: (.* | .*)')
-        local id text:match('{BE2D2D} .* (.*) ÍÛÔËÎ ‰ÓÏ ID:.* ÔÓ „ÓÒ. ˆÂÌÂ Á‡ .* ms!  ‡Ô˜‡: (.* | .*)')
-        local idhouse text:match('{BE2D2D} .* .* ÍÛÔËÎ ‰ÓÏ ID:(.*) ÔÓ „ÓÒ. ˆÂÌÂ Á‡ .* ms!  ‡Ô˜‡: (.* | .*)')
-        local ms text:match('{BE2D2D} .* .* ÍÛÔËÎ ‰ÓÏ ID:.* ÔÓ „ÓÒ. ˆÂÌÂ Á‡ (.*) ms!  ‡Ô˜‡: (.* | .*)')
-        local cap1 text:match('{BE2D2D} .* .* ÍÛÔËÎ ‰ÓÏ ID:.* ÔÓ „ÓÒ. ˆÂÌÂ Á‡ .* ms!  ‡Ô˜‡: ((.*) | .*)')
-        local cap2 text:match('{BE2D2D} .* .* ÍÛÔËÎ ‰ÓÏ ID:.* ÔÓ „ÓÒ. ˆÂÌÂ Á‡ .* ms!  ‡Ô˜‡: (.* | (.*))')
-        sampSendChat('/jail ' ..id.. ' 3000 ŒÔÛ ‰ÓÏ: ' ..idhouse..'  ‡Ô˜‡: ' ..ms)
+    if text:find('{BE2D2D} (.*) (.*) –∫—É–ø–∏–ª –¥–æ–º ID:(.*) –ø–æ –≥–æ—Å. —Ü–µ–Ω–µ –∑–∞ (.*) ms! –ö–∞–ø—á–∞: ((.*) | (.*))') then
+        local nick text:match('{BE2D2D} (.*) .* –∫—É–ø–∏–ª –¥–æ–º ID:.* –ø–æ –≥–æ—Å. —Ü–µ–Ω–µ –∑–∞ .* ms! –ö–∞–ø—á–∞: (.* | .*)')
+        local id text:match('{BE2D2D} .* (.*) –∫—É–ø–∏–ª –¥–æ–º ID:.* –ø–æ –≥–æ—Å. —Ü–µ–Ω–µ –∑–∞ .* ms! –ö–∞–ø—á–∞: (.* | .*)')
+        local idhouse text:match('{BE2D2D} .* .* –∫—É–ø–∏–ª –¥–æ–º ID:(.*) –ø–æ –≥–æ—Å. —Ü–µ–Ω–µ –∑–∞ .* ms! –ö–∞–ø—á–∞: (.* | .*)')
+        local ms text:match('{BE2D2D} .* .* –∫—É–ø–∏–ª –¥–æ–º ID:.* –ø–æ –≥–æ—Å. —Ü–µ–Ω–µ –∑–∞ (.*) ms! –ö–∞–ø—á–∞: (.* | .*)')
+        local cap1 text:match('{BE2D2D} .* .* –∫—É–ø–∏–ª –¥–æ–º ID:.* –ø–æ –≥–æ—Å. —Ü–µ–Ω–µ –∑–∞ .* ms! –ö–∞–ø—á–∞: ((.*) | .*)')
+        local cap2 text:match('{BE2D2D} .* .* –∫—É–ø–∏–ª –¥–æ–º ID:.* –ø–æ –≥–æ—Å. —Ü–µ–Ω–µ –∑–∞ .* ms! –ö–∞–ø—á–∞: (.* | (.*))')
+        sampSendChat('/jail ' ..id.. ' 3000 –û–ø—Ä—É –¥–æ–º: ' ..idhouse..' –ö–∞–ø—á–∞: ' ..ms)
         sampAddChatMessage('+one', -1)
     end
 end
 
 function q.onServerMessage(color, text)
-    if text:find('¬Õ»Ã¿Õ»≈:{BE2D2D} œÓÏÓÍÓ‰ Ì‡ (.+) %[level/id: (.+) %| ÍÓÎË˜ÂÒÚ‚Ó: (.+)%], ÔÓÏÓÍÓ‰ %-> (.+) %(¬‚Ó‰ËÚ¸ /promo%).') and state then
-        id, nick, house, ms, biz, captcha = text:match('¬Õ»Ã¿Õ»≈:{BE2D2D} œÓÏÓÍÓ‰ Ì‡ (.+) %[level/id: (.+) %| ÍÓÎË˜ÂÒÚ‚Ó: (.+)%], ÔÓÏÓÍÓ‰ %-> (.+) %(¬‚Ó‰ËÚ¸ /promo%).')
-        sampSendChat('/jail [id] 3000 ŒÔÛ ·ËÁ [biz]')
+    if text:find('–í–ù–ò–ú–ê–ù–ò–ï:{BE2D2D} –ü—Ä–æ–º–æ–∫–æ–¥ –Ω–∞ (.+) %[level/id: (.+) %| –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ: (.+)%], –ø—Ä–æ–º–æ–∫–æ–¥ %-> (.+) %(–í–≤–æ–¥–∏—Ç—å /promo%).') and state then
+        id, nick, house, ms, biz, captcha = text:match('–í–ù–ò–ú–ê–ù–ò–ï:{BE2D2D} –ü—Ä–æ–º–æ–∫–æ–¥ –Ω–∞ (.+) %[level/id: (.+) %| –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ: (.+)%], –ø—Ä–æ–º–æ–∫–æ–¥ %-> (.+) %(–í–≤–æ–¥–∏—Ç—å /promo%).')
+        sampSendChat('/jail [id] 3000 –û–ø—Ä—É –±–∏–∑ [biz]')
         sampAddChatMessage('+one', -1)
     end
 end
